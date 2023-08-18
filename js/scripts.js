@@ -11,7 +11,7 @@ scrollTopBtn.setAttribute('data-aos', 'fade-up'); // Add this line
 document.body.appendChild(scrollTopBtn);
 
 var arrowImage = document.createElement('img');
-arrowImage.src = 'img/arrow.png'; // Adjust the path to the location of your image
+arrowImage.src = 'https://freepngimg.com/download/arrow/131247-up-arrow-free-clipart-hd.png'; // Adjust the path to the location of your image
 arrowImage.style.width = '40px'; // Adjust the size to fit your design
 arrowImage.style.height = '40px';
 arrowImage.setAttribute('data-aos', 'fade-up'); // Add this line
@@ -35,18 +35,6 @@ scrollTopBtn.addEventListener('click', function() {
 window.addEventListener("scroll", function () {
     var scrollTopBtn = document.getElementById("scrollTopBtn");
     var footer = document.querySelector(".footer");
-    var footerRect = footer.getBoundingClientRect();
-    var arrowBottom = window.innerHeight - footerRect.top + 20;
-  
-    if (footerRect.top < window.innerHeight) {
-      scrollTopBtn.style.bottom = arrowBottom + "px";
-    } else {
-      scrollTopBtn.style.bottom = "20px";
-    }
-  });
-  window.addEventListener("scroll", function () {
-    var scrollTopBtn = document.getElementById("scrollTopBtn");
-    var footer = document.querySelector(".navbar");
     var footerRect = footer.getBoundingClientRect();
     var arrowBottom = window.innerHeight - footerRect.top + 20;
   
