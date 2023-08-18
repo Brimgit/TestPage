@@ -39,12 +39,9 @@ window.addEventListener('scroll', function() {
         scrollTopBtn.style.bottom = "30px";
     }
 
-    // Adjust the top position to avoid overlapping with the navbar
-    var arrowTop = navbarRect.bottom + 20;
-    if (navbarRect.bottom > 0 && window.scrollY < navbarRect.bottom) {
-        scrollTopBtn.style.top = arrowTop + "px";
-    } else {
-        scrollTopBtn.style.top = "auto";
+    // Hide the button if it overlaps with the navbar
+    if (navbarRect.bottom > 0 && scrollTopBtn.getBoundingClientRect().top < navbarRect.bottom) {
+        scrollTopBtn.style.display = 'none';
     }
 });
 
