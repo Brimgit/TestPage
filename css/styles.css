@@ -190,10 +190,6 @@ body {
   background: none;
   cursor: pointer;
 }
-#scrollTopBtn img {
-  width: 40px;
-  height: 40px;
-}
 
 #scrollTopBtn:hover::before {
   content: "Scroll to Top";

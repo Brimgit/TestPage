@@ -11,7 +11,7 @@ scrollTopBtn.setAttribute('data-aos', 'fade-up'); // Add this line
 document.body.appendChild(scrollTopBtn);
 
 var arrowImage = document.createElement('img');
-arrowImage.src = '/TestPage/img/arrow.png'; // Adjust the path to the location of your image
+arrowImage.src = 'https://freepngimg.com/download/arrow/131247-up-arrow-free-clipart-hd.png'; // Adjust the path to the location of your image
 arrowImage.style.width = '40px'; // Adjust the size to fit your design
 arrowImage.style.height = '40px';
 arrowImage.setAttribute('data-aos', 'fade-up'); // Add this line
@@ -44,55 +44,8 @@ window.addEventListener("scroll", function () {
       scrollTopBtn.style.bottom = "20px";
     }
   });
-  window.addEventListener("scroll", function () {
-    var scrollTopBtn = document.getElementById("scrollTopBtn");
-    var footer = document.querySelector(".navbar");
-    var footerRect = footer.getBoundingClientRect();
-    var arrowBottom = window.innerHeight - footerRect.top + 20;
-  
-    if (footerRect.top < window.innerHeight) {
-      scrollTopBtn.style.bottom = arrowBottom + "px";
-    } else {
-      scrollTopBtn.style.bottom = "20px";
-    }
-  });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.id = 'scrollTopBtn';
-    document.body.appendChild(scrollTopBtn);
-  
-    const arrowImage = document.createElement('img');
-    arrowImage.src = '/TestPage/img/arrow.png'; // Adjust the path to the location of your image
-    scrollTopBtn.appendChild(arrowImage);
-  
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 450) {
-        scrollTopBtn.style.display = 'block';
-        AOS.refresh(); // Add this line
-      } else {
-        scrollTopBtn.style.display = 'none';
-      }
-    });
-    scrollTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    window.addEventListener("scroll", function() {
-      const footer = document.querySelector(".footer");
-      const footerRect = footer.getBoundingClientRect();
-      const arrowBottom = window.innerHeight - footerRect.top + 20;
-  
-      if (footerRect.top < window.innerHeight) {
-        scrollTopBtn.style.bottom = arrowBottom + "px";
-      } else {
-        scrollTopBtn.style.bottom = "30px";
-      }
-    });
-  
+  document.addEventListener("DOMContentLoaded", function() {
     const text = "A Wieland holding company.";
     const element = document.getElementById("typedText");
     let index = 0;
@@ -107,3 +60,4 @@ window.addEventListener("scroll", function () {
   
     typeText();
   });
+
