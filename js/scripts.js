@@ -11,7 +11,7 @@ scrollTopBtn.setAttribute('data-aos', 'fade-up'); // Add this line
 document.body.appendChild(scrollTopBtn);
 
 var arrowImage = document.createElement('img');
-arrowImage.src = 'https://freepngimg.com/download/arrow/131247-up-arrow-free-clipart-hd.png'; // Adjust the path to the location of your image
+arrowImage.src = '/TestPage/img/arrow.png'; // Adjust the path to the location of your image
 arrowImage.style.width = '40px'; // Adjust the size to fit your design
 arrowImage.style.height = '40px';
 arrowImage.setAttribute('data-aos', 'fade-up'); // Add this line
