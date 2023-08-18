@@ -185,7 +185,14 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+  display: none;
+  border: none;
+  background: none;
   cursor: pointer;
+}
+#scrollTopBtn img {
+  width: 40px;
+  height: 40px;
 }
 
 #scrollTopBtn:hover::before {

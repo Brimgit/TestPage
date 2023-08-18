@@ -57,7 +57,42 @@ window.addEventListener("scroll", function () {
     }
   });
 
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scrollTopBtn';
+    document.body.appendChild(scrollTopBtn);
+  
+    const arrowImage = document.createElement('img');
+    arrowImage.src = '/TestPage/img/arrow.png'; // Adjust the path to the location of your image
+    scrollTopBtn.appendChild(arrowImage);
+  
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 450) {
+        scrollTopBtn.style.display = 'block';
+        AOS.refresh(); // Add this line
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+    scrollTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  
+    window.addEventListener("scroll", function() {
+      const footer = document.querySelector(".footer");
+      const footerRect = footer.getBoundingClientRect();
+      const arrowBottom = window.innerHeight - footerRect.top + 20;
+  
+      if (footerRect.top < window.innerHeight) {
+        scrollTopBtn.style.bottom = arrowBottom + "px";
+      } else {
+        scrollTopBtn.style.bottom = "30px";
+      }
+    });
+  
     const text = "A Wieland holding company.";
     const element = document.getElementById("typedText");
     let index = 0;
@@ -72,4 +107,3 @@ window.addEventListener("scroll", function () {
   
     typeText();
   });
-
