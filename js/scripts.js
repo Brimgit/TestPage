@@ -18,32 +18,33 @@ arrowImage.setAttribute('data-aos', 'fade-up');
 scrollTopBtn.appendChild(arrowImage);
 
 window.addEventListener('scroll', function() {
-    if (window.scrollY > 450) {
-        scrollTopBtn.style.display = 'block';
-        AOS.refresh();
-    } else {
-        scrollTopBtn.style.display = 'none';
-    }
-
     var scrollTopBtn = document.getElementById("scrollTopBtn");
     var footer = document.querySelector(".footer");
     var footerRect = footer.getBoundingClientRect();
     var navbar = document.querySelector(".navbar");
     var navbarRect = navbar.getBoundingClientRect();
-    var arrowBottom = window.innerHeight - footerRect.top + 20;
 
-    if (footerRect.top < window.innerHeight) {
-      scrollTopBtn.style.bottom = arrowBottom + "px";
+    // Show the button if scroll position is greater than 450px
+    if (window.scrollY > 450) {
+        scrollTopBtn.style.display = 'block';
     } else {
-      scrollTopBtn.style.bottom = "30px";
+        scrollTopBtn.style.display = 'none';
     }
 
-    var arrowTop = navbarRect.bottom + 20;
-
-    if (navbarRect.bottom > 0) {
-      scrollTopBtn.style.top = arrowTop + "px";
+    // Adjust the bottom position to avoid overlapping with the footer
+    var arrowBottom = window.innerHeight - footerRect.top + 20;
+    if (footerRect.top < window.innerHeight) {
+        scrollTopBtn.style.bottom = arrowBottom + "px";
     } else {
-      scrollTopBtn.style.top = "auto";
+        scrollTopBtn.style.bottom = "30px";
+    }
+
+    // Adjust the top position to avoid overlapping with the navbar
+    var arrowTop = navbarRect.bottom + 20;
+    if (navbarRect.bottom > 0 && window.scrollY < navbarRect.bottom) {
+        scrollTopBtn.style.top = arrowTop + "px";
+    } else {
+        scrollTopBtn.style.top = "auto";
     }
 });
 
@@ -60,11 +61,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let index = 0;
 
     function typeText() {
-      if (index < text.length) {
-        element.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeText, 30);
-      }
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 30);
+        }
     }
 
     typeText();
