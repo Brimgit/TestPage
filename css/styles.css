@@ -307,7 +307,9 @@ body {
   left: 50%;
 }
 
-.about-image{
-  max-width: 100%;
-  height: auto;
+@media (min-width< 520px) {
+  .about-image{
+    width: 100%;
+    height: auto;
+  }
 }
