@@ -84,14 +84,6 @@ $(document).ready(function() {
     megaMenuParent.on('mouseleave', function() {
       megaMenu.hide(); // Hide the mega menu
     });
-
-    // Close the dropdown menu if the user clicks outside of it
-    $(document).click(function (event) {
-        var clickover = $(event.target);
-        var _opened = $(".navbar-collapse").hasClass("show");
-        if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-          $(".navbar-toggler").click();
-        }
-      });
   });
+  
   
