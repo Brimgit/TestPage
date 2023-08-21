@@ -306,10 +306,6 @@ body {
 .timeline-item:nth-child(even) {
   left: 50%;
 }
-
-@media (min-width< 520px) {
-  .about-image{
-    width: 100%;
-    height: auto;
-  }
+.about-image{
+  /*resize image responsively*/
 }
