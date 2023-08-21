@@ -71,20 +71,18 @@ document.addEventListener("DOMContentLoaded", function() {
 $(document).ready(function() {
     // Reference to the mega menu parent element
     const megaMenuParent = $('.mega-dropdown');
-
+  
     // Reference to the mega menu
     const megaMenu = $('.mega-menu');
-
-    // Handle clicking on the mega menu parent
-    megaMenuParent.on('click', function(event) {
-      event.stopPropagation(); // Prevent the click from propagating to the document
-      megaMenu.toggle(); // Toggle the visibility of the mega menu
+  
+    // Handle hovering over the mega menu parent
+    megaMenuParent.on('mouseenter', function() {
+      megaMenu.show(); // Show the mega menu
     });
-
-    // Handle clicking outside of the mega menu
-    $(document).on('click', function(event) {
-      if (!megaMenuParent.is(event.target) && megaMenuParent.has(event.target).length === 0) {
-        megaMenu.hide(); // Hide the mega menu
-      }
+  
+    // Handle moving the cursor out of the mega menu parent
+    megaMenuParent.on('mouseleave', function() {
+      megaMenu.hide(); // Hide the mega menu
     });
   });
+  
