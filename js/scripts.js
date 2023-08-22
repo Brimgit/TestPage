@@ -82,6 +82,4 @@ function createScrollTopButton() {
     megaMenuParent.on('mouseleave', function() {
       megaMenu.hide();
     });
-
-    
   });
