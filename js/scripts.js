@@ -73,7 +73,7 @@ function createScrollTopButton() {
   $(document).ready(function() {
     const megaMenuParent = $('.mega-dropdown');
     const megaMenu = $('.mega-menu');
-  
+    megaMenu.hide();
     megaMenuParent.on('mouseenter', function() {
       megaMenu.show();
     });
