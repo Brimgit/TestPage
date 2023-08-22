@@ -81,10 +81,93 @@ function createScrollTopButton() {
     megaMenuParent.on('mouseenter', function() {
       megaMenu.show();
     });
-  
+    //the menu opens when u hover over the parent element i want it to stay open for a second even when i am no longer hovering over the parent element
+    megaMenuParent.on('mouseover', function() {
+      megaMenu.show();
+    });
+    //the menu closes when u leave the parent element i want it to stay closed for a second even when i am no longer hovering over the parent element
     megaMenuParent.on('mouseleave', function() {
       megaMenu.hide();
     });
 
     
   });
+  function addArticle() {
+    let imageUrl = document.getElementById('imageUrl').value;
+    let title = document.getElementById('title').value;
+    let description = document.getElementById('description').value;
+  
+    let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
+  
+    let article = {
+      imageUrl: imageUrl,
+      title: title,
+      description: description,
+    };
+  
+    newsArticles.push(article);
+  
+    localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
+  
+    displayArticles();
+  }
+  function displayArticles() {
+    let newsSection = document.getElementById('news-section');
+    newsSection.innerHTML = '';
+  
+    let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
+  
+    newsArticles.forEach((article, index) => {
+      let newsItem = document.createElement('div');
+      newsItem.className = 'col-md-4';
+  
+      let card = document.createElement('div');
+      card.className = 'card';
+  
+      let img = document.createElement('img');
+      img.src = article.imageUrl;
+      img.className = 'card-img-top';
+  
+      let cardBody = document.createElement('div');
+      cardBody.className = 'card-body';
+  
+      let cardTitle = document.createElement('h5');
+      cardTitle.className = 'card-title';
+      cardTitle.innerText = article.title;
+  
+      let cardText = document.createElement('p');
+      cardText.className = 'card-text';
+      cardText.innerText = article.description;
+  
+      let removeButton = document.createElement('button');
+      removeButton.className = 'btn btn-danger';
+      removeButton.innerText = 'Remove Article';
+      removeButton.addEventListener('click', function() {
+        removeArticle(index);
+      });
+  
+      cardBody.appendChild(cardTitle);
+      cardBody.appendChild(cardText);
+      cardBody.appendChild(removeButton);
+  
+      card.appendChild(img);
+      card.appendChild(cardBody);
+  
+      newsItem.appendChild(card);
+  
+      newsSection.appendChild(newsItem);
+    });
+  }
+  
+  function removeArticle(index) {
+    let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
+    if (index >= 0 && index < newsArticles.length) {
+      newsArticles.splice(index, 1);
+      localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
+      displayArticles();
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', displayArticles);
+  
+    
