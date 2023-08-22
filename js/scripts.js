@@ -119,6 +119,7 @@ function createScrollTopButton() {
     displayArticles();
   }
   
+  
   function displayArticles() {
     const newsSection = document.getElementById('news-section');
     newsSection.innerHTML = '';
