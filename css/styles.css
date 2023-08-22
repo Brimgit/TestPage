@@ -306,6 +306,26 @@ body {
 .timeline-item:nth-child(even) {
   left: 50%;
 }
-.about-image{
-  /*resize image responsively*/
+
+.about-image {
+  width: 100%;
+  padding-bottom: 68%; /* This is 340/500, maintaining the aspect ratio */
+  background-image: url('https://fakeimg.pl/500x340/a3d17d/4b990c');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+  .about-image {
+      /* Set your desired styles for screens smaller than 768px */
+      padding-bottom: 56.25%; /* Example: aspect ratio 16:9 */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+      /* Set your desired styles for screens smaller than 480px */
+      padding-bottom: 75%; /* Example: aspect ratio 4:3 */
+  }
 }
