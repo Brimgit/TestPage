@@ -356,9 +356,6 @@ body {
 }
 
 
-
-
-
 /* General styling for the news section */
 #news-section {
   display: flex;
@@ -391,3 +388,13 @@ body {
 }
 
 
+/* Download section */
+.download-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.download-list li {
+  margin-bottom: 20px;
+}
