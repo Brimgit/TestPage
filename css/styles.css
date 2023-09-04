@@ -335,6 +335,7 @@ body {
 
 
 
+
 .news-container {
   display: flex;
   flex-wrap: wrap;
@@ -506,4 +507,13 @@ span{
 .product {
   margin-top: 20px;
   margin-left: 67px;
+}
+
+@media (max-width: 500px) {
+  .download-container {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+}
 }
