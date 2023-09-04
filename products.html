@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Our services">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atem - Downloads">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 
-  <link rel="icon" type="image/x-icon" href="img/atem_white.png">
-  <title>Services - Atem</title>
+    <link rel="icon" type="image/x-icon" href="img/atem_white.png">
+    <title>Downloads - Atem</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <!-- Your Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Custom Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
+  </head>
 
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">
       <img src="https://www.atem.be/new/wp-content/uploads/2016/10/atem_white.png" alt="Logo" >
     </a>
@@ -64,8 +69,8 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products.html">Products</a>
-        </li>
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
         <li class="nav-item">
           <a class="nav-link" href="news.html">News</a>
         </li>
@@ -81,59 +86,47 @@
       </ul>
     </div>
   </nav>
-  <!-- Services Section -->
   <div class="container mt-5">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Our Services</h2>
-      <div class="underline"></div>
-    </div>
-
     <div class="row">
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 1</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service1.html" class="btn btn-primary">Learn More</a>
+      <!-- Side Menu -->
+      <div class="col-md-3">
+        <div class="side-menu">
+            <h4>Filter by Type</h4>
+            <ul>
+              <li onclick="filterByType('Electronics')">Electronics</li>
+              <li onclick="filterByType('Clothing')">Clothing</li>
+              <li onclick="filterByType('HomeGoods')">Home Goods</li>
+            </ul>
+            <h4>Filter by Brand</h4>
+            <ul>
+              <li onclick="filterByBrand('Sony')">Sony</li>
+              <li onclick="filterByBrand('Apple')">Apple</li>
+              <li onclick="filterByBrand('Samsung')">Samsung</li>
+            </ul>
+        </div>
       </div>
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 2</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service2.html" class="btn btn-primary">Learn More</a>
-      </div>
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 3</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service3.html" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
 
-    <div class="row mt-4">
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 4</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service4.html" class="btn btn-primary">Learn More</a>
+      <!-- Product Section -->
+      <div class="col-md-9">
+        <div class="section-title">
+          <h2 id="product-title">Products</h2>
+          <div class="underline"></div>
+        </div>
+        <ul class="product-list" id="product-list">
+          <!-- Products will appear here -->
+        </ul>
       </div>
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 5</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service5.html" class="btn btn-primary">Learn More</a>
-      </div>
-      <div class="col-md-4" data-aos="fade-up">
-        <h3>Service 6</h3>
-        <p>Describe the details of the service here.</p>
-        <a href="service6.html" class="btn btn-primary">Learn More</a>
-      </div>
-      <!-- Repeat the above pattern for more services if needed -->
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer mt-4 pt-4 pb-4">
+ <!-- Footer -->
+ <footer class="footer mt-4 pt-4 pb-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h5>About Us</h5>
           <p><img src="https://www.atem.be/new/wp-content/uploads/2016/10/atem_white.png"></p>
-          <p>Atem, <b>We Connect!</b> Our slogan says it all, we connect with our customers and with our suppliers! <br><br> We connect not only by delivering high-quality connectors but also by giving you as our customer a smooth and a personal support with professional and continuously trained employees.</p>
+          <p>Atem, <b>We Connect!</b> Our slogan says it all, we connect with our customers and with our suppliers! <br><br> We connect not only by delivering high quality connectors but also by giving you as our customer a smooth and a personal support with professional and continuously trained employees.</p>
         </div>
         <div class="col-md-4">
           <h5>Contact Us</h5>
@@ -146,22 +139,30 @@
             <br> tel: +32 (0)3 8661800 (centrale)
             <br> mail: <a href="mailto:info@atem.be">info@atem.be</a>
             </p>
-            </div>
-            <div class="col-md-4">
-                <h5>Social Media</h5>
-                <a href="https://www.linkedin.com/company/atemnv/">LinkedIn</a><br>
-              </div>
+        </div>
+        
+        <div class="col-md-4">
+          <h5>Social Media</h5>
+          <a href="https://www.linkedin.com/company/atemnv/">LinkedIn</a><br>
+        </div>
       </div>
     </div>
-  </footer>
+</footer>
 
-  <!-- Bootstrap JS, Popper.js, and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <script src="js/scripts.js"></script>
-  <script>AOS.init();</script>
+
+<!-- Footnote -->
+<div class="footnote text-center py-2">
+  <small>© 2023 Atem. All rights reserved.</small>
+</div>
+
+<!-- Bootstrap JS and Popper.js (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Your Custom JS -->
+<script src="js/scripts.js"></script>
+<script> AOS.init(); </script>
+
 </body>
-
 </html>

@@ -258,10 +258,63 @@ function getFileIcon(filename) {
     case 'zip':
       icon = 'img/zip-icon.png';
       break;
+      case 'mp4':
+      icon = 'img/mp4-icon.png';
+      break;
+      case 'xls':
+      icon = 'img/xls-icon.png';
+      break;
     // Add more file types and icons here
     default:
       icon = '';
       break;
   }
   return icon;
+}
+
+
+// Sample product data
+const products = [
+  { name: "iPhone", type: "Electronics", brand: "Apple" },
+  { name: "MacBook", type: "Electronics", brand: "Apple" },
+  { name: "Samsung Galaxy", type: "Electronics", brand: "Samsung" },
+  { name: "Sony Camera", type: "Electronics", brand: "Sony" },
+  { name: "T-shirt", type: "Clothing", brand: "Uniqlo" },
+  { name: "Sofa", type: "HomeGoods", brand: "Ikea" }
+];
+
+let filteredProducts = [...products];
+
+// Initially populate with all products
+window.onload = function () {
+  populateProducts(filteredProducts);
+};
+
+function populateProducts(productArray) {
+  const productList = document.getElementById("product-list");
+  productList.innerHTML = "";
+  
+  productArray.forEach(product => {
+    const productItem = document.createElement("li");
+    productItem.innerHTML = `${product.name} (${product.type}, ${product.brand})`;
+    productList.appendChild(productItem);
+  });
+}
+
+function filterProducts(filterValue, filterType) {
+  if (filterType === 'Type') {
+    filteredProducts = products.filter(product => product.type === filterValue);
+  } else if (filterType === 'Brand') {
+    filteredProducts = products.filter(product => product.brand === filterValue);
+  }
+  populateProducts(filteredProducts);
+}
+
+// This is just for demonstration purposes, ideally, you'd use Event Listeners
+function filterByType(filterValue) {
+  filterProducts(filterValue, 'Type');
+}
+
+function filterByBrand(filterValue) {
+  filterProducts(filterValue, 'Brand');
 }
