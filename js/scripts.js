@@ -239,7 +239,8 @@ function createScrollTopButton() {
     anchor.className = 'btn';
     anchor.href = `downloads/${link}`;
     anchor.innerText = `Download`;
-
+    anchor.target = '_blank';
+    
     downloadContainer.appendChild(fileInfo);
     downloadContainer.appendChild(anchor);
     listItem.appendChild(downloadContainer);
