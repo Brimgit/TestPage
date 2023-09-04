@@ -275,12 +275,12 @@ function getFileIcon(filename) {
 
 // Sample product data
 const products = [
-  { name: "iPhone", type: "Electronics", brand: "Apple" },
-  { name: "MacBook", type: "Electronics", brand: "Apple" },
-  { name: "Samsung Galaxy", type: "Electronics", brand: "Samsung" },
-  { name: "Sony Camera", type: "Electronics", brand: "Sony" },
-  { name: "T-shirt", type: "Clothing", brand: "Uniqlo" },
-  { name: "Sofa", type: "HomeGoods", brand: "Ikea" }
+  { name: "product 1", type: "Type 1", brand: "Brand 1" },
+  { name: "product 2", type: "Type 2", brand: "Brand 2" },
+  { name: "product 3", type: "Type 3", brand: "Brand 3" },
+  { name: "product 4", type: "Type 1", brand: "Brand 3" },
+  { name: "product 5", type: "Type 3", brand: "Brand 1" },
+  { name: "product 6", type: "Type 2", brand: "Brand 1" }
 ];
 
 let filteredProducts = [...products];
