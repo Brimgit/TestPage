@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Preview with File Info and Button</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 600px;
+      margin: 10px auto;
+    }
+    .file-info {
+      display: flex;
+      align-items: center;
+    }
+    .file-icon {
+      width: 50px;
+      height: 50px;
+      background: url('pdf-icon.png') no-repeat center;
+      background-size: cover;
+      margin-right: 10px;
+    }
+    .file-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .file-name {
+      font-size: 18px;
+    }
+    .file-size {
+      font-size: 14px;
+      color: #888;
+    }
+    .open-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="file-info">
+      <div class="file-icon"></div>
+      <div class="file-details">
+        <div class="file-name">Example.pdf</div>
+        <div class="file-size">1.5 MB</div>
+      </div>
+    </div>
+    <button class="open-button" onclick="openPDF()">Open</button>
+  </div>
+
+  <script>
+    function openPDF() {
+      window.open('path/to/your/pdf.pdf', '_blank');
+    }
+  </script>
+</body>
+</html>

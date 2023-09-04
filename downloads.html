@@ -86,26 +86,29 @@
 </nav>
 
 <div class="container mt-5">
-    
-    <!-- Side Menu -->
-    <div class="side-menu">
-      <ul>
-        <li onclick="showDownloads('Certificates')">Certificates</li>
-        <li onclick="showDownloads('Catalogues')">Catalogues</li>
-        <li onclick="showDownloads('JunctionBoxConfigurator')">Junction Box Configurator</li>
-        <li onclick="showDownloads('GeneralConditionsOfSale')">General Conditions of Sale</li>
-      </ul>
-    </div>
-
-    <!-- Download Section -->
-    <div>
-      <div class="section-title">
-        <h2 id="download-title">Downloads</h2>
-        <div class="underline"></div>
+    <div class="row">
+      <!-- Side Menu -->
+      <div class="col-md-3">
+        <div class="side-menu">
+          <ul>
+            <li onclick="showDownloads('Certificates')">Certificates</li>
+            <li onclick="showDownloads('Catalogues')">Catalogues</li>
+            <li onclick="showDownloads('JunctionBox Configurator')">Junction Box Configurator</li>
+            <li onclick="showDownloads('General Conditions Of Sale')">General Conditions of Sale</li>
+          </ul>
+        </div>
       </div>
-      <ul class="download-list" id="download-list">
-        <!-- Downloads will appear here -->
-      </ul>
+  
+      <!-- Download Section -->
+        <div class="col-md-9">
+            <div class="section-title">
+            <h2 id="download-title">Downloads</h2>
+            <div class="underline"></div>
+            </div>
+            <ul class="download-list" id="download-list">
+            <!-- Downloads will appear here -->
+            </ul>
+        </div>
     </div>
   </div>
 

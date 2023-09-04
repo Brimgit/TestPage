@@ -175,51 +175,92 @@ function createScrollTopButton() {
   // Add an event listener to the "Add Article" button
   const addButton = document.getElementById('addButton');
   addButton.addEventListener('click', addArticle);
+
   function showDownloads(category) {
-    document.getElementById('download-title').innerText = `${category} Downloads`;
-  
-    let downloadLinks = [];
-  
-    switch (category) {
-      case 'Certificates':
-        downloadLinks = [
-          'Certificate1.pdf',
-          'Certificate2.pdf',
-        ];
-        break;
-      case 'Catalogues':
-        downloadLinks = [
-          'Catalogue1.pdf',
-          'Catalogue2.pdf',
-        ];
-        break;
-      case 'JunctionBoxConfigurator':
-        downloadLinks = [
-          'Configurator1.zip',
-          'Configurator2.zip',
-        ];
-        break;
-      case 'GeneralConditionsOfSale':
-        downloadLinks = [
-          'Conditions1.pdf',
-          'Conditions2.pdf',
-        ];
-        break;
-      default:
-        break;
-    }
-  
-    let downloadList = document.getElementById('download-list');
-    downloadList.innerHTML = '';
-  
-    for (let link of downloadLinks) {
-      let listItem = document.createElement('li');
-      let anchor = document.createElement('a');
-      anchor.className = 'btn';
-      anchor.href = `downloads/${link}`;
-      anchor.innerText = `Download ${link}`;
-      listItem.appendChild(anchor);
-      downloadList.appendChild(listItem);
-    }
+  document.getElementById('download-title').innerText = `${category} Downloads`;
+
+  let downloadLinks = [];
+
+  switch (category) {
+    case 'Certificates':
+      downloadLinks = [
+        'Certificate1.pdf',
+        'Certificate2.pdf',
+      ];
+      break;
+    case 'Catalogues':
+      downloadLinks = [
+        'Catalogue1.pdf',
+        'Catalogue2.pdf',
+      ];
+      break;
+    case 'JunctionBox Configurator':
+      downloadLinks = [
+        'Configurator1.zip',
+        'Configurator2.zip',
+      ];
+      break;
+    case 'General Conditions Of Sale':
+      downloadLinks = [
+        'Conditions1.pdf',
+      ];
+      break;
+    default:
+      break;
   }
-  
+
+  let downloadList = document.getElementById('download-list');
+  downloadList.innerHTML = '';
+
+  for (let link of downloadLinks) {
+    let listItem = document.createElement('li');
+
+    let downloadContainer = document.createElement('div');
+    downloadContainer.className = 'download-container';
+
+    // File Info and Icon
+    let fileInfo = document.createElement('div');
+    fileInfo.className = 'file-info';
+
+    let fileIcon = document.createElement('img');
+    fileIcon.className = 'file-icon';
+    fileIcon.src = getFileIcon(link);
+    fileIcon.width = 24;
+    fileIcon.height = 24;
+
+    let fileName = document.createElement('span');
+    fileName.innerText = link;
+
+    fileInfo.appendChild(fileIcon);
+    fileInfo.appendChild(fileName);
+
+    // Download button
+    let anchor = document.createElement('a');
+    anchor.className = 'btn';
+    anchor.href = `downloads/${link}`;
+    anchor.innerText = `Download`;
+
+    downloadContainer.appendChild(fileInfo);
+    downloadContainer.appendChild(anchor);
+    listItem.appendChild(downloadContainer);
+    downloadList.appendChild(listItem);
+  }
+}
+
+function getFileIcon(filename) {
+  let ext = filename.split('.').pop().toLowerCase();
+  let icon = '';
+  switch (ext) {
+    case 'pdf':
+      icon = 'img/pdf-icon.png';
+      break;
+    case 'zip':
+      icon = 'img/zip-icon.png';
+      break;
+    // Add more file types and icons here
+    default:
+      icon = 'https://icons8.com/icon/13395/txt';
+      break;
+  }
+  return icon;
+}

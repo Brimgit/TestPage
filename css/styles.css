@@ -388,63 +388,111 @@ body {
 }
 
 
-/* Download section */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 15px;
 }
+
+.main-content {
+  display: flex;
+}
+
+.side-menu {
+  width: 300px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  padding-bottom: 165px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul li {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.side-menu ul li:hover {
+  background-color: #ccc;
+}
+
+.content-area {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
 .section-title h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
+
 .underline {
   width: 50px;
   height: 3px;
   background-color: #333;
   margin: auto;
 }
-.main-content {
-  display: flex;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007BFF;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-.side-menu {
-  width: 300px;
-  background-color: #f1f1f1;
-  padding: 20px;
-  margin-top: 20px;
-}
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.side-menu ul li {
-  padding: 15px;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-}
-.side-menu ul li:hover {
-  background-color: #ccc;
-}
+
 .download-section {
   flex-grow: 1;
-  margin-left: 20px;
 }
+
 .download-list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* Additional padding and border between the sidebar and main content area */
+.content-area {
+  flex-grow: 1;
+  margin-left: 30px;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+/* More spacious download links */
+.download-list li {
+  margin-top: 20px;
+  margin-left: 67px;
+}
+
+/* Buttons with accent color */
+.btn {
+  background-color: #74b63e;  /* Accent color */
+  color: #fff;
+  width: 150px;  /* Button width */
+  height: 50px;  /* Button height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn:hover {
+  background-color: #3e8b03;  /* Darker shade for hover */
+  color: #fff;
+}
+
+.download-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+}
+
+.file-icon {
+  margin-right: 15px;
+  height: 70px;
+  width: 70px;
 }
