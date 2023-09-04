@@ -85,20 +85,26 @@
   </div>
 </nav>
 
-  <!-- Download Section -->
-  <div class="container mt-5">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Downloads</h2>
-      <div class="underline"></div>
+<div class="container mt-5">
+    <!-- Side Menu -->
+    <div class="side-menu">
+      <ul>
+        <li onclick="showDownloads('Certificates')">Certificates</li>
+        <li onclick="showDownloads('Catalogues')">Catalogues</li>
+        <li onclick="showDownloads('JunctionBoxConfigurator')">Junction Box Configurator</li>
+        <li onclick="showDownloads('GeneralConditionsOfSale')">General Conditions of Sale</li>
+      </ul>
     </div>
-    <div class="row" data-aos="fade-up">
-      <div class="col-md-12">
-        <ul class="download-list">
-          <li><a href="download/file1.pdf" class="btn btn-primary">Download File 1</a></li>
-          <li><a href="download/file2.pdf" class="btn btn-primary">Download File 2</a></li>
-          <li><a href="download/file3.zip" class="btn btn-primary">Download File 3</a></li>
-        </ul>
+
+    <!-- Download Section -->
+    <div>
+      <div class="section-title">
+        <h2 id="download-title">Downloads</h2>
+        <div class="underline"></div>
       </div>
+      <ul class="download-list" id="download-list">
+        <!-- Downloads will appear here -->
+      </ul>
     </div>
   </div>
 

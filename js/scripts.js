@@ -175,4 +175,51 @@ function createScrollTopButton() {
   // Add an event listener to the "Add Article" button
   const addButton = document.getElementById('addButton');
   addButton.addEventListener('click', addArticle);
+  function showDownloads(category) {
+    document.getElementById('download-title').innerText = `${category} Downloads`;
+  
+    let downloadLinks = [];
+  
+    switch (category) {
+      case 'Certificates':
+        downloadLinks = [
+          'Certificate1.pdf',
+          'Certificate2.pdf',
+        ];
+        break;
+      case 'Catalogues':
+        downloadLinks = [
+          'Catalogue1.pdf',
+          'Catalogue2.pdf',
+        ];
+        break;
+      case 'JunctionBoxConfigurator':
+        downloadLinks = [
+          'Configurator1.zip',
+          'Configurator2.zip',
+        ];
+        break;
+      case 'GeneralConditionsOfSale':
+        downloadLinks = [
+          'Conditions1.pdf',
+          'Conditions2.pdf',
+        ];
+        break;
+      default:
+        break;
+    }
+  
+    let downloadList = document.getElementById('download-list');
+    downloadList.innerHTML = '';
+  
+    for (let link of downloadLinks) {
+      let listItem = document.createElement('li');
+      let anchor = document.createElement('a');
+      anchor.className = 'btn';
+      anchor.href = `downloads/${link}`;
+      anchor.innerText = `Download ${link}`;
+      listItem.appendChild(anchor);
+      downloadList.appendChild(listItem);
+    }
+  }
   
