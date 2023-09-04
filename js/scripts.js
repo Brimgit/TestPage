@@ -196,7 +196,7 @@ function createScrollTopButton() {
       break;
     case 'JunctionBox Configurator':
       downloadLinks = [
-        'Configurator1.zip',
+        'test.zip',
         'Configurator2.zip',
       ];
       break;
@@ -240,7 +240,7 @@ function createScrollTopButton() {
     anchor.href = `downloads/${link}`;
     anchor.innerText = `Download`;
     anchor.target = '_blank';
-    
+
     downloadContainer.appendChild(fileInfo);
     downloadContainer.appendChild(anchor);
     listItem.appendChild(downloadContainer);
@@ -260,7 +260,7 @@ function getFileIcon(filename) {
       break;
     // Add more file types and icons here
     default:
-      icon = 'https://icons8.com/icon/13395/txt';
+      icon = '';
       break;
   }
   return icon;
