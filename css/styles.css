@@ -441,7 +441,9 @@ body {
 .download-section {
   flex-grow: 1;
 }
-
+span{
+  margin-right:20px;
+}
 .download-list {
   list-style: none;
   margin: 69px;
@@ -494,8 +496,10 @@ body {
 
 .file-icon {
   margin-right: 15px;
+  margin-left: 5px;
   height: 70px;
   width: 70px;
+
 }
 
 
