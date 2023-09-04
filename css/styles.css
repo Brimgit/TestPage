@@ -459,6 +459,7 @@ body {
 .download-list li {
   margin-top: 20px;
   margin-left: 67px;
+  display: inline;
 }
 
 /* Buttons with accent color */
@@ -470,6 +471,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 
