@@ -184,7 +184,7 @@ function createScrollTopButton() {
   switch (category) {
     case 'Certificates':
       downloadLinks = [
-        '14001_UM_engl',
+        '14001_UM_engl.pdf',
         'Certificate2.pdf',
       ];
       break;
