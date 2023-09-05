@@ -2,7 +2,6 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-
 /* Navbar */
 .navbar {
   background-color: #333;
@@ -11,42 +10,33 @@ body {
   z-index: 100;
   transition: top 0.3s;
 }
-
 .navbar-dark .navbar-brand {
   color: #74b63e;
 }
-
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
 }
-
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #74b63e;
 }
-
 .mega-menu {
   width: 100vw;
   position: absolute;
   left: 0;
   padding: 12px;
 }
-
 .mega-dropdown:hover .mega-menu {
   display: block;
 }
-
 .mega-dropdown {
   position: static;
 }
-
 .navbar-nav .dropdown-menu {
   display: none;
 }
-
 .navbar-item:hover .mega-menu {
   display: block;
 }
-
 .dropdown-item {
   display: block;
   width: 100%;
@@ -59,148 +49,114 @@ body {
   background-color: transparent;
   border: 0;
 }
-
 /* Layout styles */
 .navbar-brand-wrapper {
   flex-grow: 1;
 }
-
 .navbar .container {
   display: flex;
   justify-content: space-between;
 }
-
 .navbar-nav.ml-auto.mr-auto {
   justify-content: center;
 }
-
 .jumbotron {
   background: url('../img/Balkonkraftwerke_Wieland_solar-1920x810.jpg') center no-repeat;
   background-size: cover;
 }
-
 .jumbotron .container {
   background-color: #ffffffee;
   padding: 20px;
   width: 300px;
   height: 300px;
 }
-
 .main, #typedText {
   font-size: 2rem;
   color: #333;
 }
-
 .main2 {
   font-size: 2rem;
   color: #74b63e;
 }
-
 #typedText{
   font-size: 1.1rem;
   color: #333;
-}
-
-.btn {
-  padding: 12px 25px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-primary {
   background-color: #74b63e;
   color: #fff;
 }
-
 .btn-primary:hover {
   background-color: #3e8b03;
 }
-
 .section-title {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
 
 }
-
 .section-title h2 {
   font-size: 1.6rem;
 }
-
 .col-md-6{
   font-size: medium;
 }
-
 .underline {
   width: 80px;
   height: 4px;
   background-color: #74b63e;
   margin: 0 auto;
 }
-
 .footer {
   background-color: #505050;
   color: white;
   font-size: small;
   text-align: left;
 }
-
 .footer h5,
 .footer p {
   margin-bottom: 15px;
 }
-
 .footer a,
 .col-md-4 a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .col-md-4 a:hover {
   color: #74b63e;
 }
-
 .footnote {
   background-color: #e7e7e7;
   color: #505050;
 }
-
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
   margin-top: 20px;
 }
-
 .card-title {
   text-align: center;
 }
-
 .card:hover,
 .card-img-top:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
 .card-img-top {
   width: 100%;
   height: 270px;
   object-fit: cover;
 }
-
 .card-img-top:hover {
   transform: scale(1.1);
   transition: transform 0.3s;
 }
-
 .sponsor-logo {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
-
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -211,7 +167,6 @@ body {
   background: none;
   cursor: pointer;
 }
-
 #scrollTopBtn:hover::before {
   content: "Scroll to Top";
   position: absolute;
@@ -225,7 +180,6 @@ body {
   white-space: nowrap;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 .about-image {
   width: 100%;
   padding-bottom: 68%; /* This is 340/500, maintaining the aspect ratio */
@@ -233,7 +187,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-
 /* New dropdown mega menu */
 .timeline {
   position: relative;
@@ -241,7 +194,6 @@ body {
   margin: 50px auto;
   padding: 40px 0;
 }
-
 .timeline::before {
   content: '';
   position: absolute;
@@ -251,13 +203,11 @@ body {
   width: 3px;
   background-color: #eee;
 }
-
 .timeline-item {
   position: relative;
   width: 50%;
   padding: 10px 40px;
 }
-
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -269,7 +219,6 @@ body {
   border-radius: 50%;
   background-color: white;
 }
-
 .timeline-item::after {
   content: '';
   position: absolute;
@@ -280,19 +229,16 @@ body {
   transform: translateY(-50%);
   z-index: 2;
 }
-
 .timeline-item:nth-child(odd)::after {
   left: 91%;
   border-width: 10px 0 10px 20px;
   border-color: transparent transparent transparent #74b63e;
 }
-
 .timeline-item:nth-child(even)::after {
   right: 91%;
   border-width: 10px 20px 10px 0;
   border-color: transparent #74b63e transparent transparent;
 }
-
 .timeline-item div {
   padding: 20px;
   background-color: #f9f9f9;
@@ -301,64 +247,47 @@ body {
   position: relative;
   z-index: 2;
 }
-
 .timeline-year {
   font-weight: bold;
   color: #74b63e;
 }
-
 .timeline-content h4 {
   margin-top: 0;
   color: #74b63e;
 }
-
 .timeline-item:nth-child(odd) {
   left: 0;
 }
-
 .timeline-item:nth-child(even) {
   left: 50%;
 }
-
 /* Media queries for different screen sizes */
 @media (max-width: 768px) {
   .about-image {
     padding-bottom: 56.25%;
   }
 }
-
 @media (max-width: 480px) {
   .about-image {
     padding-bottom: 75%;
   }
 }
-
-
-
-
-
-
 .news-container {
   display: flex;
   flex-wrap: wrap;
 }
-
 .article-image {
   width: 100%;
   max-width: 400px;
 }
-
 .article-title {
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
 }
-
 .article-description {
   margin-top: 10px;
 }
-
-
 /* General styling for the news section */
 #news-section {
   display: flex;
@@ -366,81 +295,58 @@ body {
   max-width: 1000px;
   height: auto;
 }
-
-/* Styling for the image in the card */
-.card-img-top {
-  width: 100%;
-}
-
 /* Styling for the card body */
 .card-body {
   padding: 16px;
 }
-
 /* Styling for the title in the card */
 .title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 12px;
 }
-
 /* Styling for the text in the card */
 .card-text {
   margin-top: 10px;
 
 }
-
-
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 15px;
 }
-
 .main-content {
   display: flex;
 }
-
 .side-menu {
   width: 300px;
   background-color: #f1f1f1;
   padding: 20px;
   padding-bottom: 165px;
 }
-
 .side-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .side-menu ul li {
   padding: 15px;
   cursor: pointer;
   border-bottom: 1px solid #ccc;
 }
-
 .side-menu ul li:hover {
   background-color: #ccc;
 }
-
-.content-area {
-  flex-grow: 1;
-  margin-left: 30px;
-}
-
 .section-title h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
-
 .underline {
   width: 50px;
   height: 3px;
   background-color: #333;
   margin: auto;
 }
-
 .download-section {
   flex-grow: 1;
 }
@@ -451,24 +357,26 @@ span{
   list-style: none;
   margin: 69px;
 }
-
-/* Additional padding and border between the sidebar and main content area */
 .content-area {
   flex-grow: 1;
   margin-left: 30px;
   padding-left: 20px;
   border-left: 1px solid #ccc;
 }
-
 /* More spacious download links */
 .download-list li {
   margin-top: 20px;
   margin-left: 67px;
   display: inline;
 }
-
 /* Buttons with accent color */
 .btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
   background-color: #74b63e;  /* Accent color */
   color: #fff;
   width: 150px;  /* Button width */
@@ -476,41 +384,32 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-
-
 .btn:hover {
   background-color: #3e8b03;  /* Darker shade for hover */
   color: #fff;
 }
-
 .download-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-
 .file-info {
   display: flex;
   align-items: center;
   width: 100%;
 }
-
 .file-icon {
   margin-right: 10px;
   height: 70px;
   width: 70px;
 
 }
-
-
 .product {
   margin-top: 20px;
   margin-left: 67px;
 }
-
 @media (max-width: 500px) {
   .file-info {
     justify-content: flex-start;  /* Keeps the icon aligned to the left */
