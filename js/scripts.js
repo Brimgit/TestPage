@@ -104,10 +104,7 @@ function typeText() {
     setTimeout(typeText, 30);
   }
 }
-
 typeText();
-
-
 function setInfoBoxPosition() {
   const infoBoxes = document.querySelectorAll('.info-box');
   const windowWidth = window.innerWidth;
@@ -143,7 +140,7 @@ setInfoBoxPosition();
 // Update on resize
 window.addEventListener('resize', setInfoBoxPosition);
 
-setInterval(showSlides, 10000);
+setInterval(showSlides, 5000);
 
   window.onload = function() {
     displayArticles();
