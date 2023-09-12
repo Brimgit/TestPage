@@ -77,70 +77,31 @@ function createScrollTopButton() {
 
 
 
-let slideIndex = 1;
-
-function showSlides() {
-  const slides = document.querySelectorAll('.slide');
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.opacity = 0;
-  }
-  
-  if (slideIndex >= slides.length) {
-    slideIndex = 0;
-  }
-
-  slides[slideIndex].style.opacity = 1;
-  slideIndex++;
-}
- const element = document.getElementById("typedText");
-const text = element.textContent;  // Get existing text from HTML
-element.textContent = "";  // Clear it out to start the typing effect
-let index = 0;
-
-function typeText() {
-  if (index < text.length) {
-    element.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeText, 30);
-  }
-}
-typeText();
-function setInfoBoxPosition() {
-  const infoBoxes = document.querySelectorAll('.info-box');
-  const windowWidth = window.innerWidth;
-
-  const horizontalMargin = windowWidth * 0.05; // 5% of window width
-
-  infoBoxes.forEach((infoBox) => {
-    infoBox.style.marginLeft = `${horizontalMargin}px`;
-    infoBox.style.marginRight = `${horizontalMargin}px`;
-
-    if (windowWidth >= 1024) {
-      infoBox.style.top = '20px';
-      infoBox.style.right = `${horizontalMargin}px`;
-      infoBox.style.bottom = 'auto';
-      infoBox.style.left = 'auto';
-    } else if (windowWidth >= 768) {
-      infoBox.style.top = 'auto';
-      infoBox.style.right = `${horizontalMargin}px`;
-      infoBox.style.bottom = '20px';
-      infoBox.style.left = 'auto';
-    } else {
-      infoBox.style.top = 'auto';
-      infoBox.style.right = 'auto';
-      infoBox.style.bottom = '20px';
-      infoBox.style.left = `${horizontalMargin}px`;
-    }
-  });
+window.onload = function() {
+  displayArticles();
 }
 
-// Initial setting
-setInfoBoxPosition();
+function addArticle() {
+  let imageUrl = document.getElementById('imageUrl').value;
+  let title = document.getElementById('title').value;
+  let description = document.getElementById('description').value;
 
-// Update on resize
-window.addEventListener('resize', setInfoBoxPosition);
+  let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
 
-setInterval(showSlides, 5000);
+  let article = {
+    imageUrl: imageUrl,
+    title: title,
+    description: description,
+  };
+
+  newsArticles.push(article);
+
+  localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
+  console.log('Article added:', article);
+
+  displayArticles();
+}
+
 function displayArticles() {
   const newsSection = document.getElementById('news-section');
   newsSection.innerHTML = '';
@@ -182,44 +143,20 @@ function displayArticles() {
     newsSection.appendChild(newsItem);
   });
 }
-  window.onload = function() {
-    displayArticles();
-  }
-  
-  function addArticle() {
-    let imageUrl = document.getElementById('imageUrl').value;
-    let title = document.getElementById('title').value;
-    let description = document.getElementById('description').value;
-  
-    let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
-  
-    let article = {
-      imageUrl: imageUrl,
-      title: title,
-      description: description,
-    };
-  
-    newsArticles.push(article);
-  
+
+function removeArticle(index) {
+  let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
+  if (index >= 0 && index < newsArticles.length) {
+    newsArticles.splice(index, 1);
     localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
-    console.log('Article added:', article);
-  
+    console.log('Article removed at index:', index);
     displayArticles();
   }
-  
-  function removeArticle(index) {
-    let newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
-    if (index >= 0 && index < newsArticles.length) {
-      newsArticles.splice(index, 1);
-      localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
-      console.log('Article removed at index:', index);
-      displayArticles();
-    }
-  }
-  
-  // Add an event listener to the "Add Article" button
-  const addButton = document.getElementById('addButton');
-  addButton.addEventListener('click', addArticle);
+}
+
+// Add an event listener to the "Add Article" button
+const addButton = document.getElementById('addButton');
+addButton.addEventListener('click', addArticle);
 
   function showDownloads(category) {
   document.getElementById('download-title').innerText = `${category} Downloads`;
@@ -319,3 +256,68 @@ function getFileIcon(filename) {
 
 
 
+
+let slideIndex = 1;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.slide');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = 0;
+  }
+  
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+
+  slides[slideIndex].style.opacity = 1;
+  slideIndex++;
+}
+ const element = document.getElementById("typedText");
+const text = element.textContent;  // Get existing text from HTML
+element.textContent = "";  // Clear it out to start the typing effect
+let index = 0;
+
+function typeText() {
+  if (index < text.length) {
+    element.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeText, 30);
+  }
+}
+typeText();
+function setInfoBoxPosition() {
+  const infoBoxes = document.querySelectorAll('.info-box');
+  const windowWidth = window.innerWidth;
+
+  const horizontalMargin = windowWidth * 0.05; // 5% of window width
+
+  infoBoxes.forEach((infoBox) => {
+    infoBox.style.marginLeft = `${horizontalMargin}px`;
+    infoBox.style.marginRight = `${horizontalMargin}px`;
+
+    if (windowWidth >= 1024) {
+      infoBox.style.top = '20px';
+      infoBox.style.right = `${horizontalMargin}px`;
+      infoBox.style.bottom = 'auto';
+      infoBox.style.left = 'auto';
+    } else if (windowWidth >= 768) {
+      infoBox.style.top = 'auto';
+      infoBox.style.right = `${horizontalMargin}px`;
+      infoBox.style.bottom = '20px';
+      infoBox.style.left = 'auto';
+    } else {
+      infoBox.style.top = 'auto';
+      infoBox.style.right = 'auto';
+      infoBox.style.bottom = '20px';
+      infoBox.style.left = `${horizontalMargin}px`;
+    }
+  });
+}
+
+// Initial setting
+setInfoBoxPosition();
+
+// Update on resize
+window.addEventListener('resize', setInfoBoxPosition);
+
+setInterval(showSlides, 5000);
