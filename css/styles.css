@@ -288,6 +288,7 @@ h2{
   .about-image {
     padding-bottom: 75%;
   }
+  
 }
 .news-container {
   display: flex;
@@ -442,4 +443,8 @@ span{
   .side-menu{
     padding-bottom:10px;
   }
+  .timeline-item::after{
+    border-style: none;
+  }
+  
 }
