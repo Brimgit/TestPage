@@ -141,7 +141,47 @@ setInfoBoxPosition();
 window.addEventListener('resize', setInfoBoxPosition);
 
 setInterval(showSlides, 5000);
+function displayArticles() {
+  const newsSection = document.getElementById('news-section');
+  newsSection.innerHTML = '';
+  const newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
+  const isAdminPage = window.location.href.includes('news-admin.html');
 
+  newsArticles.forEach((article, index) => {
+    const newsItem = document.createElement('div');
+    newsItem.classList.add('col-md-4');
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const img = document.createElement('img');
+    img.src = article.imageUrl;
+    img.classList.add('card-img-top');
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    const cardTitle = document.createElement('h5');
+    cardTitle.classList.add('card-title');
+    cardTitle.textContent = article.title;
+    const cardText = document.createElement('p');
+    cardText.classList.add('card-text');
+    cardText.textContent = article.description;
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    if (isAdminPage) {
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('btn', 'btn-danger');
+      removeButton.textContent = 'Remove Article';
+      removeButton.addEventListener('click', function() {
+        removeArticle(index);
+      });
+      cardBody.appendChild(removeButton);
+    }
+
+    card.appendChild(img);
+    card.appendChild(cardBody);
+    newsItem.appendChild(card);
+    newsSection.appendChild(newsItem);
+  });
+}
   window.onload = function() {
     displayArticles();
   }
@@ -165,49 +205,6 @@ setInterval(showSlides, 5000);
     console.log('Article added:', article);
   
     displayArticles();
-  }
-  
-  
-  function displayArticles() {
-    const newsSection = document.getElementById('news-section');
-    newsSection.innerHTML = '';
-    const newsArticles = JSON.parse(localStorage.getItem('newsArticles') || '[]');
-    const isAdminPage = window.location.href.includes('news-admin.html');
-  
-    newsArticles.forEach((article, index) => {
-      const newsItem = document.createElement('div');
-      newsItem.classList.add('col-md-4');
-      const card = document.createElement('div');
-      card.classList.add('card');
-      const img = document.createElement('img');
-      img.src = article.imageUrl;
-      img.classList.add('card-img-top');
-      const cardBody = document.createElement('div');
-      cardBody.classList.add('card-body');
-      const cardTitle = document.createElement('h5');
-      cardTitle.classList.add('card-title');
-      cardTitle.textContent = article.title;
-      const cardText = document.createElement('p');
-      cardText.classList.add('card-text');
-      cardText.textContent = article.description;
-      cardBody.appendChild(cardTitle);
-      cardBody.appendChild(cardText);
-  
-      if (isAdminPage) {
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('btn', 'btn-danger');
-        removeButton.textContent = 'Remove Article';
-        removeButton.addEventListener('click', function() {
-          removeArticle(index);
-        });
-        cardBody.appendChild(removeButton);
-      }
-  
-      card.appendChild(img);
-      card.appendChild(cardBody);
-      newsItem.appendChild(card);
-      newsSection.appendChild(newsItem);
-    });
   }
   
   function removeArticle(index) {
