@@ -154,6 +154,72 @@ function removeArticle(index) {
   }
 }
 
+
+let slideIndex = 1;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.slide');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = 0;
+  }
+  
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+
+  slides[slideIndex].style.opacity = 1;
+  slideIndex++;
+}
+ const element = document.getElementById("typedText");
+const text = element.textContent;  // Get existing text from HTML
+element.textContent = "";  // Clear it out to start the typing effect
+let index = 0;
+
+function typeText() {
+  if (index < text.length) {
+    element.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeText, 30);
+  }
+}
+typeText();
+function setInfoBoxPosition() {
+  const infoBoxes = document.querySelectorAll('.info-box');
+  const windowWidth = window.innerWidth;
+
+  const horizontalMargin = windowWidth * 0.05; // 5% of window width
+
+  infoBoxes.forEach((infoBox) => {
+    infoBox.style.marginLeft = `${horizontalMargin}px`;
+    infoBox.style.marginRight = `${horizontalMargin}px`;
+
+    if (windowWidth >= 1024) {
+      infoBox.style.top = '20px';
+      infoBox.style.right = `${horizontalMargin}px`;
+      infoBox.style.bottom = 'auto';
+      infoBox.style.left = 'auto';
+    } else if (windowWidth >= 768) {
+      infoBox.style.top = 'auto';
+      infoBox.style.right = `${horizontalMargin}px`;
+      infoBox.style.bottom = '20px';
+      infoBox.style.left = 'auto';
+    } else {
+      infoBox.style.top = 'auto';
+      infoBox.style.right = 'auto';
+      infoBox.style.bottom = '20px';
+      infoBox.style.left = `${horizontalMargin}px`;
+    }
+  });
+}
+
+// Initial setting
+setInfoBoxPosition();
+
+// Update on resize
+window.addEventListener('resize', setInfoBoxPosition);
+
+setInterval(showSlides, 5000);
+
 // Add an event listener to the "Add Article" button
 const addButton = document.getElementById('addButton');
 addButton.addEventListener('click', addArticle);
@@ -255,69 +321,3 @@ function getFileIcon(filename) {
 }
 
 
-
-
-let slideIndex = 1;
-
-function showSlides() {
-  const slides = document.querySelectorAll('.slide');
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.opacity = 0;
-  }
-  
-  if (slideIndex >= slides.length) {
-    slideIndex = 0;
-  }
-
-  slides[slideIndex].style.opacity = 1;
-  slideIndex++;
-}
- const element = document.getElementById("typedText");
-const text = element.textContent;  // Get existing text from HTML
-element.textContent = "";  // Clear it out to start the typing effect
-let index = 0;
-
-function typeText() {
-  if (index < text.length) {
-    element.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeText, 30);
-  }
-}
-typeText();
-function setInfoBoxPosition() {
-  const infoBoxes = document.querySelectorAll('.info-box');
-  const windowWidth = window.innerWidth;
-
-  const horizontalMargin = windowWidth * 0.05; // 5% of window width
-
-  infoBoxes.forEach((infoBox) => {
-    infoBox.style.marginLeft = `${horizontalMargin}px`;
-    infoBox.style.marginRight = `${horizontalMargin}px`;
-
-    if (windowWidth >= 1024) {
-      infoBox.style.top = '20px';
-      infoBox.style.right = `${horizontalMargin}px`;
-      infoBox.style.bottom = 'auto';
-      infoBox.style.left = 'auto';
-    } else if (windowWidth >= 768) {
-      infoBox.style.top = 'auto';
-      infoBox.style.right = `${horizontalMargin}px`;
-      infoBox.style.bottom = '20px';
-      infoBox.style.left = 'auto';
-    } else {
-      infoBox.style.top = 'auto';
-      infoBox.style.right = 'auto';
-      infoBox.style.bottom = '20px';
-      infoBox.style.left = `${horizontalMargin}px`;
-    }
-  });
-}
-
-// Initial setting
-setInfoBoxPosition();
-
-// Update on resize
-window.addEventListener('resize', setInfoBoxPosition);
-
-setInterval(showSlides, 5000);
