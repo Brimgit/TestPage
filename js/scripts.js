@@ -217,6 +217,18 @@ setInfoBoxPosition();
 
 // Update on resize
 window.addEventListener('resize', setInfoBoxPosition);
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.btn');
+
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          const url = button.getAttribute('data-url');
+          if (url) {
+              window.location.href = url; // This will redirect the browser to the URL specified in the data-url attribute
+          }
+      });
+  });
+});
 
 setInterval(showSlides, 5000);
 
